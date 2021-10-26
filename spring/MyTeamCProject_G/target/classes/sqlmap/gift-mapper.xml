@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="gift.mapper">
+
+<select id="giftlist_select" resultType="gift.GiftVO">
+select * from giftshop
+</select>
+
+<select id="gift_select" resultType="gift.GiftVO">
+select * from giftshop where gs_name = #{g_title} 
+</select>
+
+<update id="giftbuy_update">
+	update member_c set point = point - #{point} where id = #{id}
+</update>
+
+<insert id="giftbuy_insert">
+insert into gift (id, g_point, g_title)
+values(#{id}, #{point}, #{gs_name})
+</insert>
+</mapper>

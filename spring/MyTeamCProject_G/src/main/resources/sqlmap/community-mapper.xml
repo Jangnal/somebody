@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="community.mapper">
+
+<select id="co_mysearch" resultType="community.CommunityVO">
+		select * from community 
+		where c_writer = #{search}
+		and c_category = 'comm'
+    	order by c_numb desc
+</select>
+
+<insert id="co_insert">
+	insert into community ( c_title, c_content, c_writer, c_filename, c_filepath, c_category)
+	values ( #{c_title}, #{c_content}
+			 ,#{c_writer} , #{c_filename , jdbcType=VARCHAR}
+			,#{c_filepath , jdbcType=VARCHAR}, #{c_category}
+			)
+</insert>
+
+<select id="co_list" resultType="community.CommunityVO">
+	 select c.*, (select name from member_c m where m.id=c.c_writer) name 
+	from (select rownum no, c.*  
+		    from (select * 
+                    from community 
+                    where c_title like '%' || #{search, jdbcType=VARCHAR} || '%'
+                    or c_content like '%' || #{search, jdbcType=VARCHAR} || '%'
+				    or c_writer in (select id from member_c 
+                                      where id like '%' || #{search, jdbcType=VARCHAR} || '%')
+                    order by c_numb desc) c
+	where c_category = 'comm' 
+    order by c_numb desc) c
+</select>
+
+<select id="co_view" resultType="community.CommunityVO">
+	select community.*, (select name 
+                                from member_c c
+                                where c.id = community.c_writer) c_name 
+	from community
+    where community.c_numb = #{c_numb}
+</select>
+
+<delete id="co_delete">
+	delete from community 
+	where c_numb = #{id}
+</delete>
+
+<update id="co_update">
+	update community 
+	set c_title = #{c_title}, c_content = #{c_content}, c_writer = #{c_writer}
+						, c_filename = #{c_filename, jdbcType=VARCHAR}
+						, c_filepath = #{c_filepath, jdbcType=VARCHAR}
+	where c_numb = #{c_numb}
+</update>
+
+<update id="co_read" >
+	update community set c_readcount = c_readcount + 1 
+	where c_numb = #{id}
+</update>
+
+</mapper>

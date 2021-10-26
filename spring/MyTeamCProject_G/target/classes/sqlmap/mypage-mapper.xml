@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="mypage.mapper">
+
+<select id="FoodM_select" resultType="mypage.foodMVO">
+ select * from FOOD_M where id = #{id} and to_date(writedate, 'yy/mm/dd') = to_date(#{writedate}, 'yy/mm/dd')
+</select>
+
+<insert id="FoodM_insert">
+insert into FOOD_M
+ 	(id, morning, lunch, dinner, content
+            , m_filename, m_filepath, l_filename, l_filepath
+            ,d_filename, d_filepath)
+ 	values
+ 	(#{id}, #{morning}, #{lunch}, #{dinner}, #{content}
+            , #{m_filename, jdbcType=VARCHAR}, #{m_filepath, jdbcType=VARCHAR}, #{l_filename, jdbcType=VARCHAR}, #{l_filepath, jdbcType=VARCHAR}
+            , #{d_filename, jdbcType=VARCHAR}, #{d_filepath, jdbcType=VARCHAR})
+</insert>
+
+<update id="FoodM_update">
+	update FOOD_M 
+	set morning = #{morning}, lunch = #{lunch}
+				, dinner = #{dinner}, content = #{content}
+				
+	where id = #{id} 
+	and writedate like to_date( #{writedate}, 'yy/mm/dd')
+</update>
+
+<select id="foodmAllList" resultType="mypage.foodMVO" >
+	select * from FOOD_M where id = #{id}
+</select>
+
+<insert id="AttrInsert">
+	insert into attendance(id, att_point, att_memo, att_continuity)
+values(#{id}, 10, '출석체크!!', (select Max(att_continuity) from attendance where id = #{id}) + 1)
+</insert>
+
+<select id="AttrSelect" resultType="mypage.AttendanceVO">
+	select att_id, att_point, att_memo, att_continuity, TO_CHAR(att_date, 'YYYY-MM-DD') att_Date from attendance where id = #{id}
+</select>
+</mapper>

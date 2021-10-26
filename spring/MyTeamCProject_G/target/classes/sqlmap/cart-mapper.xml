@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cart.mapper">
+
+
+<select id="cart_list" resultType="cart.CartVO">
+	select c.*, gs_content content, gs_filename filename, gs_filepath filepath
+from cart c,  (select gs_name, gs_content, gs_filename, gs_filepath from giftshop) g
+where c.cart_title = g.gs_name and id = #{id}
+</select>
+
+<insert id="cart_insert">
+insert into cart(id, point, cart_title)
+values(#{id}, #{point}, #{cart_title})
+</insert>
+
+</mapper>

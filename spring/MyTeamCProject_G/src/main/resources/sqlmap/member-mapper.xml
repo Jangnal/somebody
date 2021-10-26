@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="member.mapper">
+
+<select id="kakaoIdChk" resultType="Integer">
+		SELECT COUNT(*) FROM MEMBER_C WHERE ID = #{kakao_id}
+	</select>
+
+<select id="joinIdChk" resultType="Integer">
+		SELECT COUNT(*) FROM MEMBER_C WHERE ID = #{id}
+	</select>
+
+	<!-- 최초 소셜로그인 시 : DB저장 -->
+<insert id="social_insert">
+	INSERT INTO MEMBER_C (ID, EMAIL, NAME, PHONE, KAKAO, NAVER) 
+	VALUES (#{id}, #{email, jdbcType=VARCHAR}, #{name, jdbcType=VARCHAR}, #{phone, jdbcType=VARCHAR}, #{kakao, jdbcType=VARCHAR}, #{naver, jdbcType=VARCHAR})
+</insert>
+
+<select id="social_login" resultType="Integer">
+	SELECT COUNT(*) FROM MEMBER_C WHERE ID = #{id}
+</select>
+
+<update id="social_update">
+	UPDATE MEMBER_C SET NAME = #{name, jdbcType=VARCHAR} WHERE ID = #{id}
+</update>
+
+<select id="social" resultType="member.MemberVO">
+	SELECT * FROM MEMBER_C WHERE ID = #{id}
+</select>
+
+<select id="memberAndroJoin">
+insert into member_c (id, password, email, name, phone, bmi, height, weight, member_c_file_name, member_c_file_path)
+values (#{id}, #{password}, #{email}, #{name}, #{phone}, #{bmi}, #{height}, #{weight}, #{member_c_file_name}, #{member_c_file_path})
+</select>
+
+<select id="memberAndroLogin" resultType="member.MemberVO">
+ select * from member_c where id = #{id} and password = #{password}
+</select>
+</mapper>

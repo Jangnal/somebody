@@ -1,0 +1,78 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer2"
+    android:layout_width="240dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="end"
+    android:background="#dcfdd5"
+    android:orientation="vertical"
+    android:padding="5dp" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="(회원이름) 환영"
+        android:textColor="#82966b"
+        android:textSize="20sp" />
+
+
+
+    <Button
+        android:id="@+id/btnMypage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="마이페이지"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnCart"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="찜한목록"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnmfood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="식단관리"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnAttu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="출석체크"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnScenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="고객센터"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그아웃"
+        android:visibility="gone"/>
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:visibility="visible"/>
+
+    <Button
+        android:id="@+id/btnJoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:visibility="visible"/>
+
+
+</LinearLayout>

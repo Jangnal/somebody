@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3776041666666667" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/activity_join.xml" value="0.36614583333333334" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/activity_main.xml" value="0.3614583333333333" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/exercise_type_view.xml" value="0.19114583333333332" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/exercise_view.xml" value="0.19114583333333332" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/frag_account.xml" value="0.18802083333333333" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/frag_ex.xml" value="0.19114583333333332" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/frag_exd.xml" value="0.19114583333333332" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/frag_exm.xml" value="0.1953125" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/frag_mypage.xml" value="0.18802083333333333" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/frag_mypage_update.xml" value="0.18802083333333333" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/layout/sidebar_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Study_Android/MyTeamCProject/app/src/main/res/mipmap-anydpi-v26/health_launcher.xml" value="0.3776041666666667" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/exercise_manage_view.xml" value="0.1" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/exercise_type_view.xml" value="0.1" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/exercise_view.xml" value="0.1" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/frag_attrcalander.xml" value="0.1" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/frag_ex.xml" value="0.1" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/frag_exm.xml" value="0.1" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/frag_exs.xml" value="0.1" />
+        <entry key="..\:/file/android/MyTeamCProject/app/src/main/res/layout/sidebar_main.xml" value="0.1" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/drawable/ic_baseline_arrow_back_ios_24.xml" value="0.1" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/drawable/ic_gift.xml" value="0.21979166666666666" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/font/mainfont.xml" value="0.23020833333333332" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/activity_frag_qa.xml" value="0.20520833333333333" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/activity_join.xml" value="0.22" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/cartview.xml" value="0.10106382978723404" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/community_view.xml" value="0.10030395136778116" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/exercise_manage_view.xml" value="0.203125" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/exercise_type_view.xml" value="0.1890625" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/exercise_view.xml" value="0.10030395136778116" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_account.xml" value="0.19270833333333334" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_cart.xml" value="0.36614583333333334" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_chat.xml" value="0.11594202898550725" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_coview.xml" value="0.20989583333333334" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_ex.xml" value="0.36614583333333334" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_exd.xml" value="0.16197916666666667" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_exm.xml" value="0.1703125" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_exs.xml" value="0.10030395136778116" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_home.xml" value="0.19270833333333334" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_mfood.xml" value="0.20364583333333333" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_mfoodwrite.xml" value="0.36614583333333334" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_mychat.xml" value="0.11594202898550725" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_mypage.xml" value="0.20364583333333333" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_qa.xml" value="0.20520833333333333" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/frag_walk.xml" value="0.203125" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/fragment_frag_service.xml" value="0.18229166666666666" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/fragment_menu1.xml" value="0.2" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/fragment_menu2.xml" value="0.2" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/fragment_menu3.xml" value="0.2" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/fragment_menu4.xml" value="0.2" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/giftview.xml" value="0.17447916666666666" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/layout/sidebar_main.xml" value="0.33" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/menu/bottom_menu.xml" value="0.1" />
+        <entry key="..\:/study_Android/MyTeamCProject/app/src/main/res/menu/footer.xml" value="0.2" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
