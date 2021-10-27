@@ -9,6 +9,8 @@ public class MemberDTO implements Serializable {
     private int point, height, weight;
     private float bmi;
     private String member_c_file_name, member_c_file_path;
+    private String admin;
+
 
     public MemberDTO(){};
 
@@ -179,5 +181,13 @@ public class MemberDTO implements Serializable {
 
     public void setBmi(float bmi) {
         this.bmi = bmi;
+    }
+
+    public String getAdmin() {
+        return admin;
+    }
+
+    public void setAdmin(String admin) {
+        this.admin = admin;
     }
 }

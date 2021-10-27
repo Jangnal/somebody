@@ -202,6 +202,7 @@ public class MemberATask extends AsyncTask<Void, Void, String> {
                 dto.setMember_c_file_name(row.getString("member_c_file_name"));
                 dto.setMember_c_file_path(row.getString("member_c_file_path"));
             }
+            dto.setAdmin(row.getString("admin"));
         } catch (Exception e) {
             Log.d(TAG, "readMessage: " + e.getStackTrace() + ", msg : " + e.getMessage());
         }
@@ -234,6 +235,7 @@ public class MemberATask extends AsyncTask<Void, Void, String> {
                 dto.setWeight(Integer.parseInt(row.getString("weight")));
                 dto.setHeight(Integer.parseInt(row.getString("height")));
                 dto.setPoint(Integer.parseInt(row.getString("point")));
+
                 list.add(dto);
             }
 

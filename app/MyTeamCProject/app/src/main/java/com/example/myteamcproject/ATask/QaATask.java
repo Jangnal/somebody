@@ -63,7 +63,7 @@ public class QaATask extends AsyncTask<Void, Void, String> {
             builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
             builder.setCharset(Charset.forName("UTF-8"));
 
-            builder.addTextBody("category", "QA", ContentType.create("Multipart/related", "UTF-8"));
+            builder.addTextBody("category", "oto", ContentType.create("Multipart/related", "UTF-8"));
 
 
             // 전송
