@@ -60,8 +60,6 @@ public class ExerciseATask extends AsyncTask<Void, Void, String> {
         super.onPreExecute();
     }
 
-
-
     @Override
     protected String doInBackground(Void... voids) {
         try {

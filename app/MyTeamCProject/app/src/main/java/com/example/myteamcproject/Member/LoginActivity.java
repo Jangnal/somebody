@@ -24,9 +24,9 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.myteamcproject.ATask.KakaoIdChk;
-import com.example.myteamcproject.ATask.KakaoAtask;
+import com.example.myteamcproject.ATask.KakaoJoin;
 import com.example.myteamcproject.ATask.KakaoLogin;
-import com.example.myteamcproject.ATask.MemberATask;
+import com.example.myteamcproject.ATask.LoginSelect;
 import com.example.myteamcproject.ATask.NaverIdChk;
 import com.example.myteamcproject.ATask.NaverJoin;
 import com.example.myteamcproject.ATask.NaverLogin;
@@ -161,7 +161,7 @@ public class LoginActivity extends AppCompatActivity {
                                     Log.d(TAG, "onSuccess: 카카오 로그인 성공");
                                 }
                             }else {
-                                KakaoAtask kakaoJoin = new KakaoAtask(kakao_id, kakao_name);
+                                KakaoJoin kakaoJoin = new KakaoJoin(kakao_id, kakao_name);
                                 try {
                                     state = kakaoJoin.execute().get();
                                 }catch (Exception e){
@@ -214,9 +214,9 @@ public class LoginActivity extends AppCompatActivity {
                     String id = etId.getText().toString();
                     String password = etpassword.getText().toString();
 
-                    MemberATask aTask = new MemberATask("login",id, password);
+                    LoginSelect loginSelect = new LoginSelect(id, password);
                     try {
-                        aTask.execute().get();
+                        loginSelect.execute().get();
                     } catch (ExecutionException e) {
                         e.getMessage();
                     } catch (InterruptedException e) {
@@ -438,7 +438,6 @@ public class LoginActivity extends AppCompatActivity {
         super.onDestroy();
         Session.getCurrentSession().removeCallback(mSessionCallback);
     }
-
 
     private void checkDangerousPermissions() {
         String[] permissions = {

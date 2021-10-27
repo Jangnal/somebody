@@ -13,8 +13,13 @@ public class UserExerciseDTO implements Serializable {
     String u_complete;
     String isChecked;
 
-    public UserExerciseDTO(){
+    public UserExerciseDTO() {
 
+    }
+
+    public UserExerciseDTO(String id, String e_name){
+        this.id = id;
+        this.e_name = e_name;
     }
 
     public UserExerciseDTO(int u_numb, String id, String e_name, String u_date, int e_count, int u_calorie, int u_point, String u_complete, String isChecked) {

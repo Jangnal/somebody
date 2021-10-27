@@ -32,7 +32,6 @@ public class ExerciseManageAdapter extends
 
     // 메인에서 넘겨 받는것
     ArrayList<UserExerciseDTO> dtos;
-    ArrayList<ExerciseDTO> dtos1;
     Context context;
     LayoutInflater inflater;
     FragmentManager fragmentManager;
@@ -45,14 +44,7 @@ public class ExerciseManageAdapter extends
 
         inflater = LayoutInflater.from(this.context);
     }
-    public ExerciseManageAdapter(ArrayList<UserExerciseDTO> dtos, ArrayList<ExerciseDTO> dtos1, Context context, FragmentManager fragmentManager) {
-        this.dtos = dtos;
-        this.dtos1 = dtos1;
-        this.context = context;
-        this.fragmentManager = fragmentManager;
 
-        inflater = LayoutInflater.from(this.context);
-    }
 
     // 1.화면을 인플레이트 시킨다. clickListener 를 달고 들어간다.
     @NonNull

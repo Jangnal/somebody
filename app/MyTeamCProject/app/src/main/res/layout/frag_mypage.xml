@@ -297,9 +297,9 @@
                 android:textStyle="bold" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView_exm1"
+                android:id="@+id/recyclerView_exN"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="500dp" >
             </androidx.recyclerview.widget.RecyclerView>
 
             <TextView
@@ -313,15 +313,14 @@
                 android:textStyle="bold"/>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView_exm2"
+                android:id="@+id/recyclerView_exY"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="500dp">
             </androidx.recyclerview.widget.RecyclerView>
 
         </LinearLayout>
 
     </ScrollView>
-
 
 </LinearLayout>
 </ScrollView>

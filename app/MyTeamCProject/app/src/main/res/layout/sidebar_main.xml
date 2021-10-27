@@ -40,13 +40,6 @@
         android:visibility="gone"/>
 
     <Button
-        android:id="@+id/btnAttu"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="출석체크"
-        android:visibility="gone"/>
-
-    <Button
         android:id="@+id/btnScenter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

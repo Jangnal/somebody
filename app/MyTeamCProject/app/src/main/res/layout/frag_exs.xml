@@ -86,7 +86,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:gravity="center|center_vertical"
-        android:text="횟수 : 0"
+        android:text="0"
         android:textColor="#FAF6F6"
         android:textSize="34sp"
         android:textStyle="bold"

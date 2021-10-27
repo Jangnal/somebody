@@ -32,22 +32,14 @@ public class ExerciseManageAdapter2 extends
 
     // 메인에서 넘겨 받는것
     ArrayList<UserExerciseDTO> dtos;
-    ArrayList<ExerciseDTO> dtos1;
     Context context;
     LayoutInflater inflater;
     FragmentManager fragmentManager;
 
     // 생성자
+
     public ExerciseManageAdapter2(ArrayList<UserExerciseDTO> dtos, Context context, FragmentManager fragmentManager) {
         this.dtos = dtos;
-        this.context = context;
-        this.fragmentManager = fragmentManager;
-
-        inflater = LayoutInflater.from(this.context);
-    }
-    public ExerciseManageAdapter2(ArrayList<UserExerciseDTO> dtos, ArrayList<ExerciseDTO> dtos1, Context context, FragmentManager fragmentManager) {
-        this.dtos = dtos;
-        this.dtos1 = dtos1;
         this.context = context;
         this.fragmentManager = fragmentManager;
 

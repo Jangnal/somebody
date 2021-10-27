@@ -1,6 +1,7 @@
 package com.example.myteamcproject.Mypage;
 
 import static android.app.Activity.RESULT_OK;
+import static com.example.myteamcproject.Common.CommonMethod.foodDTO;
 import static com.example.myteamcproject.Common.CommonMethod.ipConfig;
 import static com.example.myteamcproject.Common.CommonMethod.loginDTO;
 

@@ -23,6 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.myteamcproject.ATask.ExManageATask;
+import com.example.myteamcproject.Common.CommonMethod;
+import com.example.myteamcproject.Community.FragComm;
 import com.example.myteamcproject.Exercise.ExerciseManageAdapter;
 import com.example.myteamcproject.Exercise.ExerciseManageAdapter2;
 import com.example.myteamcproject.Exercise.OnExerciseManageItemClickListener;
@@ -112,34 +114,18 @@ public class FragMyPage extends Fragment {
         }
 
         // 반드시 생성해서 어댑터에 넘겨야 함
-        dtos = new ArrayList<>();
-        dtos2 = new ArrayList<>();
-
-        recyclerView_exm1 = view.findViewById(R.id.recyclerView_exm1);
-        recyclerView_exm2 = view.findViewById(R.id.recyclerView_exm2);
-        // recyclerView 에서 반드시 초기화해야 하는 부분
-        LinearLayoutManager layoutManager = new LinearLayoutManager(
-                activity, RecyclerView.VERTICAL, false);
-        LinearLayoutManager layoutManager2 = new LinearLayoutManager(
-                activity, RecyclerView.VERTICAL, false);
-        recyclerView_exm1.setLayoutManager(layoutManager);
-        recyclerView_exm2.setLayoutManager(layoutManager2);
 
         FragmentManager fragmentManager = getParentFragmentManager();
-
-        // 어댑터 객체를 생성한다
-        adapter5 = new ExerciseManageAdapter(dtos, activity, fragmentManager);
-        adapter6 = new ExerciseManageAdapter2(dtos2, activity, fragmentManager);
-
-        // 어댑터에 ArrayList에 dto를 추가한다
+        dtos = new ArrayList<>();
+        dtos2 = new ArrayList<>();
         try{
 
             for (int i = 0; i <= explaylist.size() - 1; i++ ){
                 if (explaylist.get(i).getU_complete().equals("N")){
-                    adapter5.addDto(explaylist.get(i));
+                    dtos.add(explaylist.get(i));
                 }//if
                 if(explaylist.get(i).getU_complete().equals("Y")){
-                    adapter6.addDto(explaylist.get(i));
+                    dtos2.add(explaylist.get(i));
                 }
             }//for
 
@@ -148,9 +134,28 @@ public class FragMyPage extends Fragment {
             e.getMessage();
             e.getStackTrace();
         }
+         adapter5 = new ExerciseManageAdapter(dtos, activity, fragmentManager);
+         adapter6 = new ExerciseManageAdapter2(dtos2, activity, fragmentManager);
+
+
+        recyclerView_exm1 = view.findViewById(R.id.recyclerView_exN);
+        recyclerView_exm2 = view.findViewById(R.id.recyclerView_exY);
+        // recyclerView 에서 반드시 초기화해야 하는 부분
+        LinearLayoutManager layoutManager = new LinearLayoutManager(
+                activity, RecyclerView.VERTICAL, false);
+        LinearLayoutManager layoutManager2 = new LinearLayoutManager(
+                activity, RecyclerView.VERTICAL, false);
+        recyclerView_exm1.setLayoutManager(layoutManager);
+        recyclerView_exm2.setLayoutManager(layoutManager2);
+
+
+        // 어댑터 객체를 생성한다
+
+        // 어댑터에 ArrayList에 dto를 추가한다
+
 
         // 만든 어댑터를 리사이클러 뷰에 붙인다
-        recyclerView_exm1.setAdapter(adapter5);
+       recyclerView_exm1.setAdapter(adapter5);
         recyclerView_exm2.setAdapter(adapter6);
 
         // 6.어댑터에 있는 clickListener를 이용해 클릭한 위치에 dto를 가져온다.

@@ -27,19 +27,20 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExManageATask extends AsyncTask<Void, Void, String> {
-    private static final String TAG = "ExManageATask";
 
-    String id;
+public class ExUpdateATask extends AsyncTask<Void, Void, String> {
+    private static final String TAG = "ExUpdateATask";
+
     String reqC;
+    int u_numb;
 
-    public ExManageATask(String reqC) {
+    public ExUpdateATask(String reqC) {
         this.reqC = reqC;
     }
 
-    public ExManageATask(String reqC, String id) {
+    public ExUpdateATask(String reqC, int u_numb) {
         this.reqC = reqC;
-        this.id = id;
+        this.u_numb = u_numb;
     }
 
     String state = "";
@@ -50,6 +51,12 @@ public class ExManageATask extends AsyncTask<Void, Void, String> {
     HttpEntity httpEntity;  // 응답 내용
     String body;
 
+    // doInBackground 하기전에 설정 및 초기화
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+    }
+
     @Override
     protected String doInBackground(Void... voids) {
         try {
@@ -58,29 +65,28 @@ public class ExManageATask extends AsyncTask<Void, Void, String> {
             builder.setMode(HttpMultipartMode.BROWSER_COMPATIBLE);
             builder.setCharset(Charset.forName("UTF-8"));
 
-
-            if (reqC.equalsIgnoreCase("exp")) {
-                builder.addTextBody("id", id, ContentType.create("Multipart/related", "UTF-8"));
+            if (reqC.equals("exu")) {
+                builder.addTextBody("u_numb", String.valueOf(u_numb), ContentType.create("Multipart/related", "UTF-8"));
             }
 
             // 전송
             String postURL = "";
-            if (reqC.equals("exp")) {
-                postURL = ipConfig + "/androEXPlist.me";
+            if (reqC.equals("exu")) {
+                postURL = ipConfig + "/androEXUlist.me";
             }
 
             Log.d(TAG, "doInBackground: " + postURL);
             InputStream inputStream = null;
-            httpClient = AndroidHttpClient.newInstance("ExerciseM");
+            httpClient = AndroidHttpClient.newInstance("ExerciseU");
             httpPost = new HttpPost(postURL);
             httpPost.setEntity(builder.build());
             httpResponse = httpClient.execute(httpPost); // 응답
             body = EntityUtils.toString(httpResponse.getEntity());
 
             // 하나의 오브젝트 가져올때
-            explaylist = (ArrayList<UserExerciseDTO>) readMessage(body);
+            //explaylist = (ArrayList<UserExerciseDTO>) readMessage(body);
 
-        } catch (IOException | JSONException e) {
+        } catch (IOException e) {
             Log.d(TAG, "doInBackground: " + e.getStackTrace() + ", msg : " + e.getMessage());
 
         } finally {
@@ -112,21 +118,21 @@ public class ExManageATask extends AsyncTask<Void, Void, String> {
 
     private List<UserExerciseDTO> readMessage(String body) throws IOException, JSONException {
         List<UserExerciseDTO> list = new ArrayList<UserExerciseDTO>();
-                    try {
-                        JSONArray jArray = new JSONArray(body);
-                        for (int i = 0; i < jArray.length(); i++) {
-                            JSONObject row = jArray.getJSONObject(i);
-                            UserExerciseDTO dto = new UserExerciseDTO();
-                            if (reqC.equals("exp")) {
-                                dto.setU_numb(row.getInt("u_numb"));
-                                dto.setId(row.getString("id"));
-                                dto.setE_name(row.getString("e_name"));
-                                dto.setU_date(row.getString("u_date"));
-                                dto.setE_count(row.getInt("e_count"));
-                                dto.setU_calorie(row.getInt("u_calorie"));
-                                dto.setU_point(row.getInt("u_point"));
-                                dto.setU_complete(row.getString("u_complete"));
-                                dto.setIsChecked(row.getString("isChecked"));
+        try {
+            JSONArray jArray = new JSONArray(body);
+            for (int i = 0; i < jArray.length(); i++) {
+                JSONObject row = jArray.getJSONObject(i);
+                UserExerciseDTO dto = new UserExerciseDTO();
+                if (reqC.equals("exu")) {
+                    dto.setId(row.getString("u_numb"));
+                    dto.setId(row.getString("id"));
+                    dto.setE_name(row.getString("e_name"));
+                    dto.setU_date(row.getString("u_date"));
+                    dto.setE_count(row.getInt("e_count"));
+                    dto.setU_calorie(row.getInt("u_calorie"));
+                    dto.setU_point(row.getInt("u_point"));
+                    dto.setU_complete(row.getString("u_complete"));
+                    dto.setIsChecked(row.getString("isChecked"));
                 }
                 list.add(dto);
             }
@@ -139,4 +145,5 @@ public class ExManageATask extends AsyncTask<Void, Void, String> {
 
     }//readMessage
 }
+
 
